@@ -1,0 +1,1 @@
+export { default as UploadCertificate } from './UploadCertificate';
