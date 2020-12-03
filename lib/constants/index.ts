@@ -1,0 +1,1 @@
+export const bucketCheckUrl = 'https://uc.qbox.me/v2/query?ak=%s&bucket=%s';

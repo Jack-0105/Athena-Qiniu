@@ -12,5 +12,7 @@ declare namespace AthenaQiniu {
   interface IPolicy {
     scope?: string;
     expires?: number;
+
+    generageToken(): string;
   }
 }

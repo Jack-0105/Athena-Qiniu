@@ -1,17 +1,26 @@
-import { Config, Policy, UploadCertificate } from '../lib';
+import AthenaQiniu, { Config, Policy, UploadCertificate } from '../lib';
+import * as path from 'path';
 
 var accessKey = 'bvBVBT65W4OVNt0KSXPK1upMZUJztD063m7sTxKw';
 var secretKey = '7yJ0UDN2tE2rSh5uIKnCQd_BjEqx4wWw6DpasVgW';
-const uploadCertificate = new UploadCertificate(accessKey, secretKey);
 
 const policyOption = {
   bocket: {
-    name: '123'
+    name: 'jake'
   },
   accessKey,
   secretKey
 }
 
-const policy = new Policy(policyOption);
+// const policy = new Policy(policyOption);
 
-console.error(policy.generageToken())
+// Zone.getZoneInfo(accessKey, 'jake');
+
+// console.error(policy.generageToken())
+
+const config = new Config({ accessKey, secretKey });
+const athenaQiniu = new AthenaQiniu(config, policyOption);
+
+const filePath = path.join(__dirname, './index.ts');
+
+athenaQiniu.upload(filePath)
